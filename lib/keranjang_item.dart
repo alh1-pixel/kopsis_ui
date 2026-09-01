@@ -18,7 +18,19 @@ class _KeranjangItemState extends State<KeranjangItem> {
   int jumlah = 1;
 
   @override
+  void initState() {
+    super.initState();
+    debugPrint("initState dipanggil");
+  }
+  @override
+  void dispose() {
+    debugPrint("dispose dipanggil");
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    debugPrint('build dipanggil');
     int totalHarga = jumlah * widget.hargaAnggota;
 
     return Row(
