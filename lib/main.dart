@@ -58,17 +58,35 @@ class _MyAppState extends State<MyApp> {
                 });
               },
             ),
+            Text('Lebar layar: ' +  MediaQuery.of(context).size.width.toStringAsFixed(0)),
             Expanded(
-              child: ListView.builder(
-                itemCount: hasilCari.length,
-                itemBuilder: (context, index) {
-                  final barang = hasilCari[index];
-                  return BarangCard(
-                    nama: barang['nama'], 
-                    kategori: barang['kategori'],
-                    hargaAnggota: barang['anggota'], 
-                    stok: barang['stok']);
-                }
+              child: LayoutBuilder(
+                builder : (context, constraints) {
+                  int kolom;
+                  if (constraints.maxWidth < 600) {
+                    kolom = 1;
+                  } else if (constraints.maxWidth < 900) {
+                    kolom = 2;
+                  } else {
+                    kolom = 3;
+                  }
+                  return GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: kolom,
+                      childAspectRatio: 3,
+                    ),
+                    itemCount: hasilCari.length,
+                    itemBuilder: (context, index) {
+                      final barang = hasilCari[index];
+                      return BarangCard(
+                        nama: barang['nama'], 
+                        kategori: barang['kategori'],
+                        hargaAnggota: barang['anggota'], 
+                        stok: barang['stok']
+                      );
+                    },
+                  );
+                },
               ),
             ),
           ],
