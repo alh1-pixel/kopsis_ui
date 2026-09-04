@@ -13,7 +13,7 @@ class _MyAppState extends State<MyApp> {
   late TextEditingController _controller;
   String kataCari = '';
   final List<Map<String, dynamic>> daftarBarang = const[
-    {'nama': 'Buku Tulis', 'kategori': 'ATK' ,'anggota' : 3000, 'umum' : 3500, 'stok' : 5},
+    {'nama': 'Buku Tulis Bergaris 58 Lembar Sampul Tebal', 'kategori': 'ATK' ,'anggota' : 3000, 'umum' : 3500, 'stok' : 5},
     {'nama': 'Pulpen', 'kategori': 'ATK', 'anggota' : 2500, 'umum' : 3000, 'stok' : 25},
     {'nama': 'Roti', 'kategori': 'MAKANAN', 'anggota' : 5000, 'umum' : 5500, 'stok' : 15},
     {'nama': 'Susu UHT', 'kategori': 'MINUMAN', 'anggota' : 6000, 'umum' : 6500, 'stok' : 5},

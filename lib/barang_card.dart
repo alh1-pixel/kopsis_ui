@@ -39,7 +39,11 @@ class BarangCard extends StatelessWidget {
           _getKategoriIcon(kategori),
           color: Colors.lightBlue,
         ),
-        title: Text(nama),
+        title: Text(
+          nama,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          ),
         subtitle: Text('Anggota Rp' + hargaAnggota.toString()),
         trailing: KeranjangItem(
           stok: stok,
